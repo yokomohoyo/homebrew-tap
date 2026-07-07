@@ -1,8 +1,8 @@
 cask "insomnium" do
   version "0.3.0-rc.5"
-  sha256 "753b4b198a9af3494e09fcec5ef625d3a98832fe3cda1e4a531f27ba342ae093"
+  sha256 "c47d19c931899bcd18c4b4392bde83de2fa76aadbdb0959ca2fcf5b12aeede2b"
 
-  url "https://github.com/yokomohoyo/insomnium/releases/download/0.3.0-rc.5/Insomnium.Core-#{version}.dmg",
+  url "https://github.com/yokomohoyo/insomnium/releases/download/0.3.0-rc.6/Insomnium.Core-#{version}.dmg",
       verified: "github.com/yokomohoyo/insomnium/"
   name "Insomnium"
   desc "100% local, privacy-focused fork of Insomnia (REST / GraphQL / gRPC client)"
