@@ -14,7 +14,7 @@ cask "insomnium" do
   end
 
   auto_updates false
-  depends_on macos: ">= :catalina"
+  depends_on macos: :catalina
 
   app "Insomnium.app"
 
