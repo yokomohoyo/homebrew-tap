@@ -9,10 +9,12 @@ cask "insomnium" do
 
   livecheck do
     url :url
+    regex(/^v?(\d+(?:\.\d+)+(?:-rc\.\d+)?)$/i)
     strategy :github_latest
   end
 
   auto_updates false
+  depends_on arch: :arm64
   depends_on macos: :monterey
 
   app "Insomnium.app"
@@ -21,10 +23,12 @@ cask "insomnium" do
   # Strip the quarantine attribute so Gatekeeper lets the app launch without
   # users having to right-click → Open. Remove this block once the build is
   # signed + notarized (CSC_LINK + notarize-action in release-on-publish.yml).
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-d", "-r", "com.apple.quarantine", "#{appdir}/Insomnium.app"],
-                   sudo: false
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-d", "-r", "com.apple.quarantine", "{{appdir}}/Insomnium.app"],
+        must_succeed:   false,
+        writable_paths: ["Insomnium.app"],
+        writable_base:  :appdir
   end
 
   zap trash: [
