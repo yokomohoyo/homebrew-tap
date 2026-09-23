@@ -2,8 +2,7 @@ cask "insomnium" do
   version "0.3.0-rc.11"
   sha256 "664f6034404f8594ae1cfbec79fb3b74f0144e7916e798ba41f7084e9389a58a"
 
-  url "https://github.com/yokomohoyo/insomnium/releases/download/0.3.0-rc.11/Insomnium.Core-#{version}.dmg",
-      verified: "github.com/yokomohoyo/insomnium/"
+  url "https://github.com/yokomohoyo/insomnium/releases/download/#{version}/Insomnium.Core-#{version}.dmg"
   name "Insomnium"
   desc "100% local, privacy-focused fork of Insomnia (REST / GraphQL / gRPC client)"
   homepage "https://github.com/yokomohoyo/insomnium"
@@ -14,7 +13,7 @@ cask "insomnium" do
   end
 
   auto_updates false
-  depends_on macos: :catalina
+  depends_on macos: :monterey
 
   app "Insomnium.app"
 
