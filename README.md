@@ -10,7 +10,9 @@ brew install --cask yokomohoyo/tap/insomnium
 
 The fully-qualified name (`yokomohoyo/tap/insomnium`) is required because Homebrew core also ships a now-deprecated `insomnium` cask pointing at the original upstream; without the prefix `brew` resolves to that one.
 
-The macOS build is currently distributed unsigned, so the cask strips the Gatekeeper quarantine attribute after install. Once a Developer ID cert is wired into the release workflow, that postflight will be removed.
+Since 0.3.0-rc.15 the macOS app is signed with a Developer ID certificate and notarized by Apple, and the cask keeps Homebrew's normal Gatekeeper quarantine. The first time you open Insomnium, macOS asks whether you want to open an app downloaded from the Internet; click Open. `brew upgrade` carries that approval over to new versions.
+
+Upgrading from 0.3.0-rc.14 or earlier (unsigned builds), `brew upgrade` prints `Homebrew couldn't verify insomnium's signer so macOS may prompt at next launch.` once. That is expected, and the next launch shows the same one-time prompt.
 
 ## Update
 

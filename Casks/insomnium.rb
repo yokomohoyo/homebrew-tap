@@ -19,18 +19,6 @@ cask "insomnium" do
 
   app "Insomnium.app"
 
-  # The macOS build is currently unsigned (no Apple Developer cert wired into CI).
-  # Strip the quarantine attribute so Gatekeeper lets the app launch without
-  # users having to right-click → Open. Remove this block once the build is
-  # signed + notarized (CSC_LINK + notarize-action in release-on-publish.yml).
-  postflight_steps do
-    run "/usr/bin/xattr",
-        args:           ["-d", "-r", "com.apple.quarantine", "{{appdir}}/Insomnium.app"],
-        must_succeed:   false,
-        writable_paths: ["Insomnium.app"],
-        writable_base:  :appdir
-  end
-
   zap trash: [
     "~/Library/Application Support/Insomnium",
     "~/Library/Application Support/insomnium-app",
