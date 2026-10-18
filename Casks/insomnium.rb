@@ -1,6 +1,6 @@
 cask "insomnium" do
-  version "0.3.4"
-  sha256 "1093d0fb1dde4f7fcaeaceba9e9f9dc46f3d623f0921a2b7a03dbb63ffb6670f"
+  version "0.3.5"
+  sha256 "794717d2c666125441271809d1631eefe32b660a691cc3e2bc843a1274c3d005"
 
   url "https://github.com/yokomohoyo/insomnium/releases/download/#{version}/Insomnium.Core-#{version}.dmg"
   name "Insomnium"
